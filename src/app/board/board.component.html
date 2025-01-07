@@ -1,47 +1,61 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <title>Jeu de GO</title>
-</head>
-<body>
-  <h1>Jeu de GO</h1>
-  <h1>{{tour}}</h1>
-  <button (click)="test()">test class</button>
-  <div class="plateau">
-    <table>
-      <tbody>
-          <tr *ngFor="let row of table" >
-              <th *ngFor="let row of table2" (click)="Changement()" [ngClass]="Class()"></th>
-          </tr>
-      </tbody>
-  </table>
-    <div class="cl">
-      <div class="ligne1"></div>
-      <div class="ligne2"></div>
-      <div class="ligne3"></div>
-      <div class="ligne4"></div>
-      <div class="ligne5"></div>
-      <div class="ligne6"></div>
-      <div class="ligne7"></div>
-      <div class="ligne8"></div>
-      <div class="ligne9"></div>
-    </div>
-    <div class="cc">
-      <div class="colonne1"></div>
-      <div class="colonne2"></div>
-      <div class="colonne3"></div>
-      <div class="colonne4"></div>
-      <div class="colonne5"></div>
-      <div class="colonne6"></div>
-      <div class="colonne7"></div>
-      <div class="colonne8"></div>
-      <div class="colonne9"></div>
-    </div>
+<h1>Jeu de GO</h1>
+<p>Il s'agit du plus ancien jeu de stratégie combinatoire abstrait connu, probablement créé en Chine pendant la période des Printemps et Automnes.
+   D’abord réservé aux classes dirigeantes, le go jouit d'une grande popularité en Chine, en Corée et au Japon. 
+   Dans le reste du monde, où sa découverte est récente, sa notoriété est croissante. 
+   Son succès tient autant à la simplicité de ses règles qu'à sa grande richesse combinatoire et sa profondeur stratégique...</p>
+
+   <div class="btncontainer">
+    <button class="charger">Charger une partie</button>
+    <button class="new">Nouvelle partie</button>
   </div>
-</body>
-</html>
+  <!--
+<div class="plateau">
+    <table>
+        <tbody>
+          <tr *ngFor="let row of table; let rowIndex = index">
+            <th *ngFor="let cell of row; let colIndex = index" 
+                (click)="Changement(rowIndex, colIndex)" 
+                (contextmenu)="onRightClick($event, rowIndex, colIndex)"
+                [ngClass]="{'black': cell === 1, 'white': cell === 2}">
+            </th>
+          </tr>
+        </tbody>
+      </table>
+  <div class="cl">
+    <div class="ligne1"></div>
+    <div class="ligne2"></div>
+    <div class="ligne3"></div>
+    <div class="ligne4"></div>
+    <div class="ligne5"></div>
+    <div class="ligne6"></div>
+    <div class="ligne7"></div>
+    <div class="ligne8"></div>
+    <div class="ligne9"></div>
+  </div>
+  <div class="cc">
+    <div class="colonne1"></div>
+    <div class="colonne2"></div>
+    <div class="colonne3"></div>
+    <div class="colonne4"></div>
+    <div class="colonne5"></div>
+    <div class="colonne6"></div>
+    <div class="colonne7"></div>
+    <div class="colonne8"></div>
+    <div class="colonne9"></div>
+  </div>
+</div>
+
+
+<h2>Score Noir : {{ScoreN}}</h2>
+<h2>Score Blanc : {{ScoreB}}</h2>
+
+<h3>{{table}}</h3>
+
+-->
+<div class="bck"></div> 

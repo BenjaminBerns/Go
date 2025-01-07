@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jeu-de-go": {
+    "go": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/jeu-de-go",
+            "outputPath": "dist/go",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "jeu-de-go:build:production"
+              "buildTarget": "go:build:production"
             },
             "development": {
-              "buildTarget": "jeu-de-go:build:development"
+              "buildTarget": "go:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -99,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "ac744893-893e-44d5-a171-d6319e89b110"
+    "analytics": "9d4a7e4d-f751-400e-a028-aaed63e04c33"
   }
 }

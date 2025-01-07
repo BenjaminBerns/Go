@@ -1,5 +1,5 @@
 {
-  "name": "jeu-de-go",
+  "name": "go",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:jeu-de-go": "node dist/jeu-de-go/server/server.mjs"
+    "serve:ssr:go": "node dist/go/server/server.mjs"
   },
   "private": true,
   "dependencies": {

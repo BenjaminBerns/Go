@@ -1,0 +1,19 @@
+table{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+}
+
+table tbody th{
+    border: 1px solid red;
+    border-radius: 100px;
+}
+
+.black{
+    background-color: black;
+}
+
+.white{
+    background-color: white;
+}

@@ -24,12 +24,15 @@ h1{
 }
 
 .plateau{
+    top: 100px;
+    right: 100px;
     margin: 100px;
-    position: absolute;
+    position: fixed;
     height: 500px;
     width: 500px;
-    background-color: rgb(196, 126, 23);
+    background-color: rgba(245, 245, 245, 0.466);
     border-radius: 10px;
+    border: 5px solid black;
 }
 
 .cl{
@@ -65,27 +68,6 @@ h1{
     width: 5px;
     height: 450px;
     background-color: black;
-}
-
-table{
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    z-index: 1;
-}
-
-table tbody th{
-    border: 1px solid transparent;
-    border-radius: 100px;
-}
-
-.black{
-    background-color: black;
-    border: 100px solid wheat;
-}
-
-.white{
-    background-color: white;
 }
 
 h3{

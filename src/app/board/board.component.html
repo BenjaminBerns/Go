@@ -14,19 +14,9 @@
     <button class="charger">Charger une partie</button>
     <button class="new">Nouvelle partie</button>
   </div>
-  <!--
+  
 <div class="plateau">
-    <table>
-        <tbody>
-          <tr *ngFor="let row of table; let rowIndex = index">
-            <th *ngFor="let cell of row; let colIndex = index" 
-                (click)="Changement(rowIndex, colIndex)" 
-                (contextmenu)="onRightClick($event, rowIndex, colIndex)"
-                [ngClass]="{'black': cell === 1, 'white': cell === 2}">
-            </th>
-          </tr>
-        </tbody>
-      </table>
+  <app-cells></app-cells>
   <div class="cl">
     <div class="ligne1"></div>
     <div class="ligne2"></div>
@@ -52,10 +42,6 @@
 </div>
 
 
-<h2>Score Noir : {{ScoreN}}</h2>
-<h2>Score Blanc : {{ScoreB}}</h2>
 
-<h3>{{table}}</h3>
 
--->
 <div class="bck"></div> 

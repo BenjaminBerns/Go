@@ -2,9 +2,9 @@
     <tbody>
         <tr *ngFor="let row of table; let rowIndex = index">
             <th *ngFor="let cell of row; let colIndex = index" 
-                (click)="onCellClick(rowIndex, colIndex)" 
-                (contextmenu)="onCellRightClick($event, rowIndex, colIndex)"
-                [ngClass]="{'black': cell === 1, 'white': cell === 2}">
+            (click)="onCellClick(rowIndex, colIndex)" 
+            (contextmenu)="onCellRightClick($event, rowIndex, colIndex)"
+            [ngClass]="{'black': cell === 1, 'white': cell === 2}">
             </th>
         </tr>
     </tbody>

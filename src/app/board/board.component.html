@@ -12,10 +12,15 @@
 
    <div class="btncontainer">
     <button class="charger">Charger une partie</button>
-    <button class="new">Nouvelle partie</button>
+    <button class="new" (click)="onShowPlateau()">Nouvelle partie</button>
   </div>
   
-<div class="plateau">
+<div class="score" [class.anim]="isVisible">
+  <h2>Score Noir : {{ScoreN}}</h2>
+  <h2>Score Blanc : {{ScoreB}}</h2>
+</div>
+  
+<div class="plateau" [class.anim]="isVisible">
   <app-cells></app-cells>
   <div class="cl">
     <div class="ligne1"></div>
@@ -41,7 +46,6 @@
   </div>
 </div>
 
-
-
+<button class="skip" (click)="skip()" [class.anim]="isVisible">Passer son tour</button>
 
 <div class="bck"></div> 

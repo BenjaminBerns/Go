@@ -24,16 +24,24 @@ h1{
 }
 
 .plateau{
-    top: 100px;
-    right: 100px;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 1s ease, transform 1s ease;
+    top: 150px;
+    right: 200px;
     margin: 100px;
     position: fixed;
     height: 500px;
     width: 500px;
     background-color: rgba(245, 245, 245, 0.466);
     border-radius: 10px;
-    border: 5px solid black;
+    border: 1px solid black;
 }
+
+.plateau.anim, .score.anim, .skip.anim{
+    opacity: 1; 
+    transform: translateY(0);
+  }
 
 .cl{
     margin: 25px;
@@ -48,7 +56,7 @@ h1{
 
 .ligne1, .ligne2, .ligne3, .ligne4, .ligne5, .ligne6, .ligne7, .ligne8, .ligne9{
     width: 450px;
-    height: 5px;
+    height: 1px;
     background-color: black;
 }
 
@@ -65,7 +73,7 @@ h1{
 }
 
 .colonne1, .colonne2, .colonne3, .colonne4, .colonne5, .colonne6, .colonne7, .colonne8, .colonne9{
-    width: 5px;
+    width: 1px;
     height: 450px;
     background-color: black;
 }
@@ -141,4 +149,32 @@ button {
     justify-content: space-around;
     align-items: left;
     flex-direction: column;
+}
+
+.score{
+    opacity: 0;
+    position: absolute;
+    top: 120px;
+    right: 300px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 60px;
+    width: 500px;
+    background-color: rgba(245, 245, 245, 0.466);
+    border-radius: 10px;
+    border: 1px solid black;
+    transform: translateY(20px); 
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.skip{
+    opacity: 0;
+    position: absolute;
+    bottom: 50px;
+    right: 300px;
+    transform: translateY(20px); 
+    transition: opacity 1s ease, transform 1s ease;
 }

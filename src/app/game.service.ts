@@ -13,18 +13,28 @@ export class GameService {
   skip: number = 0;
   partieEnCour: boolean = true;
 
-  title = 'jeu-de-go';
-  table: number[][] = Array.from({ length: 9 }, () => Array(9).fill(0));
-  table2: number[] = Array.from({ length: 9 });
+  taille: number = 19;
+
+  table: number[][] = Array.from({ length: this.taille }, () => Array(this.taille).fill(0));
+  table2: number[] = Array.from({ length: this.taille });
+  
+  copy: number[][] = Array.from({ length: this.taille }, () => Array(this.taille).fill(0));
+  resultat: number[][] = Array.from({ length: this.taille }, () => Array(this.taille).fill(0));
 
   tour: number = 0;
 
   private ScoreBSubject = new Subject<number>();
   private ScoreNSubject = new Subject<number>();
   private partieEnCourSubject = new Subject<boolean>();
+  private tableau = new Subject<number[][]>();
   scoreBObs = this.ScoreBSubject.asObservable();
   scoreNObs = this.ScoreNSubject.asObservable();
   partieEnCourObs = this.partieEnCourSubject.asObservable();
+  tableauObs = this.tableau.asObservable();
+
+  passTrue(booleen: boolean){
+    return true;
+  }
 
   Changement(rowIndex: number, colIndex: number): void {
     if(this.partieEnCour == true){
@@ -41,6 +51,12 @@ export class GameService {
         this.table = [...this.table];  //mise à jour de la table (pas automatique)
       } 
     }
+  }
+
+  SetLength(length: number): void{
+    this.taille = length;
+    this.table = Array.from({ length: this.taille }, () => Array(this.taille).fill(0));
+    this.tableau.next(this.table);
   }
 
   Reset(): void{
@@ -104,4 +120,20 @@ export class GameService {
     }
     return null; 
   }
+
+  saveCopy(): void{
+    this.copy = this.table;
+    localStorage.setItem("partie", JSON.stringify(this.copy));
+  }
+
+  loadCopy(){
+    const savedData = localStorage.getItem("partie");
+    if (savedData) {
+      this.resultat = JSON.parse(savedData) as number[][];
+    } else {
+      this.resultat = Array.from({ length: 9 }, () => Array(9).fill(0)); // Default value
+    }
+    return this.resultat;
+  }
+
 }

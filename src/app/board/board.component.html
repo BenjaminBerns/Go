@@ -11,8 +11,15 @@
    Son succès tient autant à la simplicité de ses règles qu'à sa grande richesse combinatoire et sa profondeur stratégique...</p>
 
    <div class="btncontainer">
-    <button class="charger">Charger une partie</button>
     <button class="new" (click)="onShowPlateau()">Nouvelle partie</button>
+    <button class="saveGame" (click)="saveGame()">Enregistrer la partie</button>
+    <button class="load" (click)="loadGame()">Charger une partie</button>
+  </div>
+
+  <div class="btncontainer2" [class.anim]="lengthchoice">
+    <button class="new" (click)="board(9)">--- 9x9 ---</button>
+    <button class="saveGame" (click)="board(13)">-- 13x13 --</button>
+    <button class="load" (click)="board(19)">-- 19x19 --</button>
   </div>
   
 <div class="score" [class.anim]="isVisible">
@@ -22,7 +29,16 @@
   
 <div class="plateau" [class.anim]="isVisible">
   <app-cells></app-cells>
-  <div class="cl">
+  <table [ngClass]="{'plateaubck9': LB === 9, 'plateaubck13': LB === 13, 'plateaubck19': LB === 19}">
+    <tbody>
+        <tr *ngFor="let row of plateau; let rowIndex = index">
+            <th *ngFor="let cell of row; let colIndex = index">
+            </th>
+        </tr>
+    </tbody>
+</table>
+
+  <!--<div class="cl">
     <div class="ligne1"></div>
     <div class="ligne2"></div>
     <div class="ligne3"></div>
@@ -44,6 +60,7 @@
     <div class="colonne8"></div>
     <div class="colonne9"></div>
   </div>
+-->
 </div>
 
 <button class="skip" (click)="skip()" [class.anim]="isVisible">Passer son tour</button>
